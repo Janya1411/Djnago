@@ -1,0 +1,354 @@
+{% extends "NGO_HOME/home.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block headt %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/high.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="parralax">
+        <div class="abc">
+            <div class="centered">
+                <h1 class="find"> Find Nearby</h1>
+                <h2 class="find">
+                <span class="typewrite" data-period="2000"
+                      data-type='[ "NGO", "Help Centers"]'>
+        </span>
+                </h2>
+                <div class="container">
+                    <div class="form-search-wrap p-2" style="margin-top: 150px">
+                        <form method="GET" class="fix" action="{% url 'ngo-home:ngo-search' %}">
+                            {% csrf_token %}
+                            <div class="row align-items-center">
+                                <div class="col-lg-12 col-xl-4 no-sm-border border-right">
+                                    <select class="form-control" name="q" id="category">
+                                        <option value="Women & Children">What are you looking for?</option>
+                                        <option value="Women & Children">Women & Children</option>
+                                        <option value="Health">Health</option>
+                                        <option value="Senior Citizen">Senior Citizen</option>
+                                        <option value="Farmers">Farmers</option>
+                                        <option value="Disablity">Disablity</option>
+                                        <option value="LGBTQA">LGBTQA</option>
+                                        <option value="Women">Women</option>
+                                        <option value="Children">Children</option>
+                                        <option value="Senior Citizen">Senior Citizen</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-12 col-xl-3 no-sm-border border-right">
+                                    <div class="wrap-icon">
+                                        <span class="icon icon-room"></span>
+                                        <select class="form-control" name="loc" id="category">
+                                            <option value="">Location</option>
+                                            <option value="Andher">Andheri</option>
+                                            <option value="Bandra">Bandra</option>
+                                            <option value="Santacruz">Santacruz</option>
+                                            <option value="Mahim">Mahim</option>
+                                            <option value="Powai">Powai</option>
+                                            <option value="kamathipura">kamathipura</option>
+                                            <option value="Sion">Sion</option>
+                                            <option value="Chembur">Chembur</option>
+                                            <option value="Ghatkopar">Ghatkopar</option>
+                                            <option value="Kandivali">Kandivali</option>
+                                            <option value="Malad">Malad</option>
+                                            <option value="Borivali">Borivali</option>
+                                            <option value="Dadar">Dadar</option>
+                                            <option value="Thane">Thane</option>
+                                            <option value="Mahim">Mahim</option>
+                                            <option value="Kurla">Kurla</option>
+                                            <option value="Sion">Sion</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-3">
+                                    <div class="select-wrap">
+                                        <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
+                                        <select class="form-control" name="category" id="category">
+                                            <option value="">All Categories</option>
+                                            <option value="">NGO</option>
+                                            <option value="">Help Centers</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-2 ml-auto text-right">
+                                    <button class="btn btn-outline-info" style="width: 100px" type="submit">Search
+                                    </button>
+                                </div>
+                            </div>
+                            {% csrf_token %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-5" style="background: #101631">
+            <h2 class="popular" > Popular NGOS</h2>
+            <br>
+            <div class="container" >
+                <div class="row hidden-md-up">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title">Trishul</h4>
+                                <h6 class="card-subtitle text-muted">Women</h6>
+                                <br>
+                                <p class="card-text p-y-1">131/4 Trishul Women Empowerment Program, Part after Welfare High school ground ; Aram Nagar  Rd ; versova Andheri W </p>
+                                <a href="http://www.trishul-ngo.org/" class="card-link">http://www.trishul-ngo.org/</a>
+                                <a href="" class="card-link">lopa@trishul-ngo.org</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title">Abundant life ministries</h4>
+                                <h6 class="card-subtitle text-muted">Health</h6>
+                                <br>
+                                <p class="card-text p-y-1">Regd. Off. : 27/A, Chapel Road, Bandra (W), Mumbai 400 050. INDIA.</p>
+                                <br>
+                                <br>
+                                <a href="https://www.abundantlifeministries.net" class="card-link">https://www.abundantlifeministries.net</a>
+                                <a href="#" class="card-link">malarc@gmail.com</a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title">Muskan Foundation</h4>
+                                <h6 class="card-subtitle text-muted">Disablity</h6>
+                                <br>
+                                <p class="card-text p-y-1">15 Prashanti, Kala Nagar, Bandra East, Mumbai, Maharashtra 400051 ,time :9.30 am-4.30 pm</p>
+                                <br>
+                                <a href="http://muskanfoundation.org.in/" class="card-link">http://muskanfoundation.org.in/</a>
+                                <a href="#" class="card-link">contact@muskanfoundation.org.in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title">CRH(committee For The Right of Housing)</h4>
+                                <h6 class="card-subtitle text-muted">Housing</h6>
+                                <br>
+                                <p class="card-text p-y-1">PPC Chawl plot no-341 near ram mandir ,opp Vijay gas service kherwadi Bandra East</p>
+                                <a href="https://www.crhmumbai.org" class="card-link">https://www.crhmumbai.org</a>
+                                <a href="#" class="card-link">crhmumbai@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title">Majlis</h4>
+                                <h6 class="card-subtitle text-muted">LGBTQA</h6>
+                                <br>
+                                <p class="card-text p-y-1">WING A, Sunder Nagar Rd, Kolivery Village, Vidya Nagari, Kalina, Santacruz East, Mumbai</p>
+                                <br>
+                                <a href="http://www.majlislaw.com" class="card-link">http://www.majlislaw.com</a>
+                                <a href="#" class="card-link">majlislaw@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-block">
+                                <h4 class="card-title">Triratna </h4>
+                                <h6 class="card-subtitle text-muted">Farmers</h6>
+                                <br>
+                                <p class="card-text p-y-1">Prerana Mandal	Triratna Bhavan 3rd Road tps 6 near Municipal Gardens Khotwadi Santacruz W</p>
+                                <br>
+                                <a href="https://www.triratnaindia.org" class="card-link">https://www.triratnaindia.org</a>
+                                <a href="#" class="card-link">tpm_1402@rediffmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="{% static 'blog/img33.jpeg' %}" style="width:100%">
+                    <div class="text">Lend A Hand</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="{% static 'blog/img11.jpeg' %}" style="width:100%">
+                    <div class="text">Bring A Smile</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="{% static 'blog/img22.jpeg' %}" style="width:100%">
+                    <div class="text">Save A Life</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="{% static 'blog/img44.jpeg' %}" style="width:100%">
+                    <div class="text">Make A difference</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="{% static 'blog/img 555.jpeg' %}" style="width:100%">
+                    <div class="text">Because Together we can</div>
+                </div>
+
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </div>
+<br>
+        <section class="services-section py-5 py-md-0">
+            <div class="container">
+                <div class="row no-gutters d-flex">
+                    <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+                        <div class="media block-6 text-center services d-block">
+                            <div class="icon"><span class="flaticon-charity"></span></div>
+                            <div class="media-body">
+                                <h3 class="heading mb-3">Help &amp; Support</h3>
+                                <p> 203 Fake St. Mountain View, San Francisco, California, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+                        <div class="media block-6 text-center services active d-block">
+                            <div class="icon"><span class="flaticon-adoption"></span></div>
+                            <div class="media-body">
+                                <h3 class="heading mb-3">Adoption</h3>
+                                <p>A small river named Duden flows by their place and supplies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+                        <div class="media block-6 text-center services d-block">
+                            <div class="icon"><span class="flaticon-volunteer"></span></div>
+                            <div class="media-body">
+                                <h3 class="heading mb-3">Volunteering</h3>
+                                <p>A small river named Duden flows by their place and supplies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+                        <div class="media block-6 text-center services d-block">
+                            <div class="icon"><span class="flaticon-open-book"></span></div>
+                            <div class="media-body">
+                                <h3 class="heading mb-3">Education</h3>
+                                <p>A small river named Duden flows by their place and supplies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer footer_bg_1">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget ">
+                                <h3 class="footer_title">
+                                    About Us
+                                </h3>
+                                <p>Heaven fruitful doesn't over lesser days appear creeping seasons so behold bearing
+                                    days open</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget ">
+                                <h3 class="footer_title">
+                                    Contact Info
+                                </h3>
+                                <p>Address :Your address goes
+                                    here, your demo address.</p>
+                                <ul>
+                                    <li><a href="#">Phone : +8880 44338899</a></li>
+                                    <li><a href="#">Email : xyz@NGOrphan.com</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget ">
+                                <h3 class="footer_title">
+                                    Important Link
+                                </h3>
+                                <ul>
+                                    <li><a href="#">View Project</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Testimonial</a></li>
+                                    <li><a href="#">Proparties</a></li>
+                                    <li><a href="#">Support</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Newsletter
+                                </h3>
+                                <p class="newsletter_text">
+                                    Heaven fruitful doesn't over lesser in days. Appear creeping seasons
+                                </p>
+                                <form action="#" class="newsletter_form">
+                                    <input type="text" placeholder="Enter your mail">
+                                    <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copy-right_text">
+                <div class="container">
+                    <div class="footer_border"></div>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <p class="copy_right">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="socail_links">
+                                <ul class="socail_links">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-dribbble"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-behance"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends "blog/reg_base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div  class="col-md-4">
+    <div class="register_form">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                    <h3>Join Today</h3>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+                    {{ form.username|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+                    {{ form.password1|as_crispy_field }}
+                </div>
+                <div class="form-group col-md-6 mb-0">
+                    {{ form.password2|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+                    {{ form.email|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+                    {{ form.prof|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12 mb-0">
+                    <button type="submit" class="btn btn-outline-info btn-large btn-secondary float-left">Sign in
+                    </button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12 mb-0">
+                    <small class="text-muted">
+                        Already Have An Account? <a class="ml-2" href="#">Sign In</a>
+                    </small>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+        </div>
+    </div>
+{% endblock content %}

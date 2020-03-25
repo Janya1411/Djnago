@@ -1,0 +1,35 @@
+{% extends "NGO_HOME/home.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block headt %}
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/search.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+    <ul>
+        {% for NGO in object_list %}
+            <article class="media content-section">
+                <div class="media-body">
+                    <h2>{{ NGO.name }}</h2>
+                    <div class="article-metadata">
+                        <h4>{{ NGO.Address }}</h4>
+                        <a href={{ NGO.Website }}>{{ NGO.Website }}</a>
+                        <small class="text-muted" style="float: right">{{ NGO.Contact_No }}</small>
+                        <br>
+                        <small class="text-muted" style="float: right">{{ NGO.Email_ID }}</small>
+                    </div>
+                    <p class="article-content">{{ NGO.Domain }}</p>
+
+                    {% if user.is_authenticated %}
+                        <a class="btn btn-secondary"type="submit" style="color: white" href="{% url 'blog:blog-home' %}">Blog</a>
+                        <a class="btn btn-primary" type="submit" style="color: white"href="{% url 'social:room_detail' %}">Chat</a>
+                    {% else %}
+                       <a class="btn btn-primary" type="submit"style="color: white"href="{% url 'login' %}">Login</a>
+                        <a class="btn btn-secondary" type="submit"style="color: white"href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                </div>
+            </article>
+        {% endfor %}
+    </ul>
+    </div>
+{% endblock content %}
