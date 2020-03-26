@@ -365,15 +365,32 @@ img {vertical-align: middle;}
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
+  font-size: 100px;
+  color: #101631;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
   width: 100%;
   text-align: center;
 }
-
+.text1{
+  font-size: 100px;
+  color: white;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.text2{
+  font-size: 100px;
+  color:#101631;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
 
 
 /* The dots/bullets/indicators */
@@ -408,16 +425,27 @@ img {vertical-align: middle;}
   from {opacity: .4}
   to {opacity: 1}
 }
-.card{
-  border: black 1px solid;
-  padding:10px;
-  border-radius: 8px;
-  box-shadow: 3px 3px #101631;
-  background: white;
-}
+
 h4.card-title{
   text-align: center;
 }
 h2.popular{
   color:white;
+}
+.card-img-top{
+  height: 200px;
+  padding: 0px;
+  margin: 0px;
+}
+.card{
+  background: #101631;
+  color: white;
+  text-align: center;
+  border:0px;
+  font-size: large;
+}
+
+.text1{
+  font-size: 100px;
+  color: white;
 }
